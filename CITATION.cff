@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "pet-food-safety: vet-reviewed food and plant safety dataset for pets"
+type: dataset
+authors:
+  - name: "BioVet veterinary clinic network"
+    website: "https://bio.vet"
+license: CC-BY-4.0
+repository-code: "https://github.com/xpressmike/pet-food-safety"
+url: "https://bio.vet/mozhno-li/"
+version: 1.0.0
+date-released: 2026-08-14
+keywords:
+  - veterinary
+  - pet-food
+  - toxicology
+  - dogs
+  - cats
+  - dataset

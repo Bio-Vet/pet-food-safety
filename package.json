@@ -1,0 +1,14 @@
+{
+  "name": "pet-food-safety",
+  "version": "1.0.0",
+  "description": "Vet-reviewed dataset: safety of foods and plants for dogs, cats, rabbits, rodents, birds and reptiles",
+  "type": "module",
+  "main": "data/items.json",
+  "exports": { ".": "./data/items.json" },
+  "files": ["data", "schema", "README.md", "LICENSE"],
+  "scripts": { "validate": "node scripts/validate.mjs" },
+  "keywords": ["pets", "veterinary", "toxicology", "dataset", "dogs", "cats", "food-safety"],
+  "author": "BioVet veterinary clinic network (https://bio.vet)",
+  "license": "CC-BY-4.0",
+  "repository": { "type": "git", "url": "https://github.com/xpressmike/pet-food-safety" }
+}
