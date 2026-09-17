@@ -6,9 +6,9 @@ authors:
   - name: "BioVet veterinary clinic network"
     website: "https://bio.vet"
 license: CC-BY-4.0
-repository-code: "https://github.com/xpressmike/pet-food-safety"
+repository-code: "https://github.com/Bio-Vet/pet-food-safety"
 url: "https://bio.vet/mozhno-li/"
-version: 1.0.0
+version: 1.1.0
 date-released: 2026-08-14
 keywords:
   - veterinary

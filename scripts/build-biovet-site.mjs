@@ -32,7 +32,7 @@ const convert = (it) => {
 };
 
 const result = {
-	_comment: "GENERATED from github.com/xpressmike/pet-food-safety — edit there, not here. Rebuild: node scripts/build-biovet-site.mjs",
+	_comment: "GENERATED from github.com/Bio-Vet/pet-food-safety — edit there, not here. Rebuild: node scripts/build-biovet-site.mjs",
 	items: data.items.filter((i) => i.category === "food").map(convert),
 	plants: data.items.filter((i) => i.category === "plant").map(convert),
 };

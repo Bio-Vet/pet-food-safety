@@ -1,6 +1,6 @@
 {
  "$schema": "https://json-schema.org/draft/2020-12/schema",
- "$id": "https://github.com/xpressmike/pet-food-safety/schema/items.schema.json",
+ "$id": "https://github.com/Bio-Vet/pet-food-safety/schema/items.schema.json",
  "title": "pet-food-safety dataset",
  "type": "object",
  "required": ["meta", "items"],

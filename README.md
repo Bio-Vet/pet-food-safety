@@ -39,7 +39,7 @@ One file — [`data/items.json`](data/items.json):
 
 ```js
 const { items } = await fetch(
-  "https://cdn.jsdelivr.net/gh/xpressmike/pet-food-safety@main/data/items.json"
+  "https://cdn.jsdelivr.net/gh/Bio-Vet/pet-food-safety@main/data/items.json"
 ).then((r) => r.json());
 
 const grape = items.find((i) => i.names.en.includes("grapes"));
