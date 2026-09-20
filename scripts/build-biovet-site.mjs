@@ -19,14 +19,23 @@ for (const it of [...(prev.items ?? []), ...(prev.plants ?? [])]) {
 	if (it.icon) for (const n of it.names) iconByName.set(n, it.icon);
 }
 
+// иконки для лекарств и бытовой химии (Lucide, имена есть в gen-icons.mjs сайта)
+const HOUSEHOLD_ICON = {
+	"ibuprofen-nsaids": "pill", aspirin: "pill", "human-cold-drops": "pill", isoniazid: "pill",
+	antifreeze: "car", rodenticide: "rat", permethrin: "bug", "household-bleach": "spray-can",
+	"laundry-pods": "washing-machine", "essential-oils": "droplets", "nicotine-vapes": "cigarette",
+	cannabis: "cannabis", batteries: "battery", "deicing-reagents": "snowflake",
+};
 const convert = (it) => {
 	const out = { names: it.names.ru };
 	for (const [en, ruKey] of Object.entries(SPECIES)) {
 		if (it.verdicts[en]) out[ruKey] = it.verdicts[en] === "caution" ? "caution" : it.verdicts[en];
 	}
-	out.icon = iconByName.get(it.names.ru[0]) ?? (it.category === "plant" ? "flower" : "utensils");
+	out.icon = iconByName.get(it.names.ru[0]) ?? HOUSEHOLD_ICON[it.id] ?? (it.category === "plant" ? "flower" : it.category === "medication" ? "pill" : it.category === "household" ? "triangle-alert" : "utensils");
 	out.note = it.notes.ru;
-	const own = (it.sources ?? []).find((s) => s.startsWith("https://bio.vet/"));
+	if (it.evidence) out.evidence = it.evidence; // уровень доверия — чекер печатает его под вердиктом
+	// toxic_dose на сайт НЕ переносим: дозировок на bio.vet не печатаем (правило врачей)
+	const own = (it.sources ?? []).find((s) => s.startsWith("https://bio.vet/") && !/\/(chto-delat|mozhno-li)\/$/.test(s));
 	out.url = own ? own.replace("https://bio.vet", "") : "/chto-delat/";
 	return out;
 };
@@ -35,8 +44,10 @@ const result = {
 	_comment: "GENERATED from github.com/Bio-Vet/pet-food-safety — edit there, not here. Rebuild: node scripts/build-biovet-site.mjs",
 	items: data.items.filter((i) => i.category === "food").map(convert),
 	plants: data.items.filter((i) => i.category === "plant").map(convert),
+	// лекарства и бытовая химия — третий раздел чекера (пакет 23, 20.09.2026)
+	household: data.items.filter((i) => i.category === "medication" || i.category === "household").map(convert),
 };
 
 const outPath = new URL("../dist-food-check.json", import.meta.url);
 writeFileSync(outPath, JSON.stringify(result, null, 1), "utf8");
-console.log(`✓ dist-food-check.json: ${result.items.length} foods + ${result.plants.length} plants`);
+console.log(`✓ dist-food-check.json: ${result.items.length} foods + ${result.plants.length} plants + ${result.household.length} household/medication`);

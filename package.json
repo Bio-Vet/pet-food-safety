@@ -1,7 +1,7 @@
 {
   "name": "pet-food-safety",
-  "version": "1.1.0",
-  "description": "Vet-reviewed dataset: safety of foods and plants for dogs, cats, rabbits, rodents, birds and reptiles",
+  "version": "1.2.0",
+  "description": "Vet-reviewed dataset: safety of foods, plants, human medications and household chemicals for dogs, cats, rabbits, rodents, birds and reptiles",
   "type": "module",
   "main": "data/items.json",
   "exports": { ".": "./data/items.json" },

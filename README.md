@@ -1,8 +1,8 @@
 # pet-food-safety
 
-**Vet-reviewed dataset: which foods and plants are safe, risky or dangerous for pets** — dogs, cats, rabbits & rodents, birds and reptiles.
+**Vet-reviewed dataset: which foods, plants, human medications and household chemicals are safe, risky or dangerous for pets** — dogs, cats, rabbits & rodents, birds and reptiles.
 
-![items](https://img.shields.io/badge/items-68-a1c44c) ![license](https://img.shields.io/badge/data-CC--BY--4.0-blue) ![reviewed](https://img.shields.io/badge/vet--reviewed-2026--08-4f7d1b)
+![items](https://img.shields.io/badge/items-91-a1c44c) ![license](https://img.shields.io/badge/data-CC--BY--4.0-blue) ![reviewed](https://img.shields.io/badge/vet--reviewed-2026--09-4f7d1b)
 
 Most "toxic foods for pets" lists online are copied from one another with no
 medical review. This dataset is different: **every entry has been reviewed by
@@ -14,12 +14,15 @@ checker at [bio.vet/mozhno-li](https://bio.vet/mozhno-li/).
 
 One file — [`data/items.json`](data/items.json):
 
-- **68 entries**: 39 foods, 29 house/garden plants
+- **91 entries**: 42 foods, 35 house/garden plants, 4 human medications, 10 household chemicals and hazards
 - **Per-species verdicts** (`safe` / `caution` / `danger`) for dogs, cats,
   rabbits & rodents, birds, reptiles
 - **Bilingual**: names and notes in English and Russian
 - **Mechanism of toxicity** where established (theobromine, xylitol, persin,
   grayanotoxins, colchicine, taxines…)
+- **Toxic-dose thresholds** (`toxic_dose`) for the classic poisons — chocolate,
+  xylitol, grapes, onion, human NSAIDs, antifreeze, nicotine — educational
+  reference, not a treatment guide
 - **Sources** for every entry (ASPCA, Merck Veterinary Manual, FDA, clinical
   articles by BioVet veterinarians)
 

@@ -23,7 +23,7 @@ for (const it of data.items ?? []) {
 	if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(it.id ?? "")) err(`${at}: bad id`);
 	if (ids.has(it.id)) err(`${at}: duplicate id`);
 	ids.add(it.id);
-	if (!["food", "plant"].includes(it.category)) err(`${at}: bad category`);
+	if (!["food", "plant", "medication", "household"].includes(it.category)) err(`${at}: bad category`);
 	for (const lang of ["en", "ru"]) {
 		if (!Array.isArray(it.names?.[lang]) || it.names[lang].length === 0) err(`${at}: names.${lang} empty`);
 		if ((it.notes?.[lang] ?? "").length < 20) err(`${at}: notes.${lang} too short`);
@@ -48,4 +48,6 @@ if (errors.length) {
 	for (const e of errors) console.error("  -", e);
 	process.exit(1);
 }
-console.log(`✓ ${data.items.length} items valid (foods: ${data.items.filter((i) => i.category === "food").length}, plants: ${data.items.filter((i) => i.category === "plant").length})`);
+const byCat = {};
+for (const it of data.items) byCat[it.category] = (byCat[it.category] ?? 0) + 1;
+console.log(`✓ ${data.items.length} items valid (${Object.entries(byCat).map(([k, v]) => `${k}: ${v}`).join(", ")})`);

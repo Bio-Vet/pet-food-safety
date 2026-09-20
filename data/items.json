@@ -1,12 +1,12 @@
 {
  "meta": {
   "name": "pet-food-safety",
-  "description": "Vet-reviewed safety verdicts for common foods and plants across pet species",
-  "version": "1.1.0",
+  "description": "Vet-reviewed safety verdicts for foods, plants, human medications and household chemicals across pet species",
+  "version": "1.2.0",
   "license": "CC-BY-4.0",
   "attribution": "BioVet veterinary clinic network, Moscow — https://bio.vet",
   "reviewed_by": "Licensed veterinarians of the BioVet clinic network (20 round-the-clock clinics, Moscow)",
-  "last_review": "2026-08",
+  "last_review": "2026-09",
   "verdict_levels": {
    "safe": "Generally safe in moderation for a healthy animal",
    "caution": "Give only with restrictions described in notes, or avoid",
@@ -31,8 +31,19 @@
     "version": "1.1.0",
     "date": "2026-09-18",
     "changes": "Added 3 items already live in the BioVet food checker: wheat, barley, lychee (71 items total)."
+   },
+   {
+    "version": "1.2.0",
+    "date": "2026-09-20",
+    "changes": "Pack 23 signed off by the chief veterinarian of BioVet (2026-09-20): 23 house/garden plants re-reviewed — verdicts for rabbits & rodents, birds and reptiles added to 18 existing entries, 5 new plants (alstroemeria, rose, peony, eucalyptus, mimosa), euphorbia moved to 'danger' for dogs and cats; new categories 'medication' and 'household' (14 entries: human NSAIDs, aspirin, nasal drops, isoniazid, antifreeze, rodenticides, permethrin, bleach, laundry pods, essential oils, nicotine, cannabis, batteries, de-icing reagents) with toxic_dose thresholds; toxic_dose added to chocolate, xylitol, grapes and onion."
    }
-  ]
+  ],
+  "categories": {
+   "food": "Foods and drinks",
+   "plant": "House and garden plants",
+   "medication": "Human medications (never give without a vet)",
+   "household": "Household chemicals and hazards"
+  }
  },
  "items": [
   {
@@ -61,9 +72,11 @@
    },
    "sources": [
     "https://www.aspca.org/pet-care/animal-poison-control/people-foods-avoid-feeding-your-pets",
-    "https://bio.vet/wiki/voprosy/sobaki/mozhno-li-sobake-yagody/"
+    "https://bio.vet/wiki/voprosy/sobaki/mozhno-li-sobake-yagody/",
+    "https://www.merckvetmanual.com/toxicology/food-hazards/food-hazards-in-animals"
    ],
-   "evidence": "consensus"
+   "evidence": "consensus",
+   "toxic_dose": "No established safe dose: kidney failure reported from as little as a few grapes/raisins regardless of body weight"
   },
   {
    "id": "chocolate-cocoa",
@@ -94,7 +107,8 @@
     "https://www.merckvetmanual.com/toxicology/food-hazards/chocolate-toxicosis-in-animals",
     "https://bio.vet/wiki/voprosy/sobaki/mozhno-li-sobake-sladkoe/"
    ],
-   "evidence": "consensus"
+   "evidence": "consensus",
+   "toxic_dose": "Dogs: mild signs from ~20 mg/kg theobromine, severe from ~40–60 mg/kg. Dark chocolate ~5–16 mg/g; milk ~2 mg/g — 20 g of dark chocolate can sicken a 10 kg dog"
   },
   {
    "id": "onion-garlic-leek",
@@ -125,9 +139,11 @@
     "ru": "Разрушают эритроциты — анемия. Опасны в любом виде: сырые, варёные, в составе блюд и детского питания."
    },
    "sources": [
-    "https://www.aspca.org/pet-care/animal-poison-control/people-foods-avoid-feeding-your-pets"
+    "https://www.aspca.org/pet-care/animal-poison-control/people-foods-avoid-feeding-your-pets",
+    "https://www.merckvetmanual.com/toxicology/food-hazards/food-hazards-in-animals"
    ],
-   "evidence": "consensus"
+   "evidence": "consensus",
+   "toxic_dose": "Hemolysis from ~5 g/kg (cats) and ~15–30 g/kg (dogs); repeated small amounts accumulate"
   },
   {
    "id": "xylitol",
@@ -146,7 +162,9 @@
    },
    "verdicts": {
     "dog": "danger",
-    "cat": "caution"
+    "cat": "caution",
+    "rabbit_rodent": "danger",
+    "bird": "caution"
    },
    "toxin": "Xylitol — massive insulin release (hypoglycemia), hepatic necrosis in dogs",
    "notes": {
@@ -156,7 +174,8 @@
    "sources": [
     "https://www.merckvetmanual.com/toxicology/food-hazards/xylitol-toxicosis-in-dogs"
    ],
-   "evidence": "consensus"
+   "evidence": "consensus",
+   "toxic_dose": "Dogs: hypoglycemia from ~0.1 g/kg; liver damage from ~0.5 g/kg — 1–2 pieces of gum can poison a small dog"
   },
   {
    "id": "avocado",
@@ -239,7 +258,8 @@
     "dog": "danger",
     "cat": "danger",
     "rabbit_rodent": "danger",
-    "bird": "danger"
+    "bird": "danger",
+    "reptile": "danger"
    },
    "toxin": "Caffeine (methylxanthine) — cardiotoxic",
    "notes": {
@@ -266,7 +286,10 @@
    },
    "verdicts": {
     "dog": "danger",
-    "cat": "danger"
+    "cat": "danger",
+    "rabbit_rodent": "danger",
+    "bird": "danger",
+    "reptile": "danger"
    },
    "toxin": "Fermentation: gastric distension plus ethanol production",
    "notes": {
@@ -297,7 +320,9 @@
    },
    "verdicts": {
     "dog": "caution",
-    "cat": "danger"
+    "cat": "danger",
+    "rabbit_rodent": "caution",
+    "bird": "caution"
    },
    "toxin": "Mechanical hazard: splinters, perforation, obstruction",
    "notes": {
@@ -324,7 +349,8 @@
     "dog": "caution",
     "cat": "caution",
     "rabbit_rodent": "danger",
-    "bird": "caution"
+    "bird": "caution",
+    "reptile": "danger"
    },
    "toxin": "Lactose intolerance in most adult animals",
    "notes": {
@@ -332,6 +358,7 @@
     "ru": "У большинства взрослых животных лактаза не вырабатывается — понос. Котятам и щенкам коровье молоко тоже не замена материнскому."
    },
    "sources": [
+    "https://bio.vet/wiki/pitanie/koshki/mozhno-li-koshke-moloko/",
     "https://www.aspca.org/pet-care/animal-poison-control/people-foods-avoid-feeding-your-pets",
     "https://bio.vet/wiki/voprosy/koshki/mozhno-li-koshke-moloko/"
    ],
@@ -358,7 +385,8 @@
     "dog": "caution",
     "cat": "caution",
     "rabbit_rodent": "danger",
-    "bird": "caution"
+    "bird": "caution",
+    "reptile": "danger"
    },
    "notes": {
     "en": "A little low-fat unsalted cheese or cottage cheese is an acceptable treat; fatty and salty cheeses are not.",
@@ -384,7 +412,8 @@
    },
    "verdicts": {
     "dog": "caution",
-    "cat": "caution"
+    "cat": "caution",
+    "bird": "caution"
    },
    "toxin": "Parasites in raw freshwater fish; thiaminase (vitamin B1 deficiency) on a constant fish diet",
    "notes": {
@@ -413,7 +442,8 @@
    },
    "verdicts": {
     "dog": "caution",
-    "cat": "caution"
+    "cat": "caution",
+    "bird": "caution"
    },
    "toxin": "Vitamin A excess (hypervitaminosis A) when overfed",
    "notes": {
@@ -444,7 +474,8 @@
     "dog": "danger",
     "cat": "caution",
     "rabbit_rodent": "caution",
-    "bird": "caution"
+    "bird": "caution",
+    "reptile": "danger"
    },
    "toxin": "Macadamia: unidentified toxin (weakness, hyperthermia in dogs); other nuts: fat, salt, obstruction risk",
    "notes": {
@@ -472,7 +503,8 @@
    },
    "verdicts": {
     "dog": "caution",
-    "cat": "caution"
+    "cat": "caution",
+    "reptile": "caution"
    },
    "toxin": "Raw: Salmonella risk and avidin (biotin binding)",
    "notes": {
@@ -501,7 +533,10 @@
    },
    "verdicts": {
     "dog": "caution",
-    "cat": "caution"
+    "cat": "caution",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "danger"
    },
    "toxin": "Raw pork: Aujeszky's disease (pseudorabies) and parasites",
    "notes": {
@@ -534,7 +569,8 @@
     "dog": "danger",
     "cat": "caution",
     "rabbit_rodent": "danger",
-    "bird": "danger"
+    "bird": "danger",
+    "reptile": "danger"
    },
    "notes": {
     "en": "Sugar leads to obesity and diabetes; chocolate and xylitol in sweets are outright toxic. Pets should not get sweets.",
@@ -568,7 +604,8 @@
     "dog": "safe",
     "cat": "caution",
     "rabbit_rodent": "danger",
-    "bird": "safe"
+    "bird": "safe",
+    "reptile": "caution"
    },
    "notes": {
     "en": "For dogs rice and buckwheat are a normal diet component. Cats are obligate carnivores — grains only as a minor additive. Rabbits and rodents must not get grain porridge: it disrupts the gut.",
@@ -638,7 +675,8 @@
     "dog": "safe",
     "cat": "safe",
     "rabbit_rodent": "caution",
-    "bird": "safe"
+    "bird": "safe",
+    "reptile": "caution"
    },
    "notes": {
     "en": "Blueberries are a safe treat, a couple of berries at a time. Grapes and raisins are the deadly exception.",
@@ -700,7 +738,8 @@
     "dog": "caution",
     "cat": "caution",
     "rabbit_rodent": "danger",
-    "bird": "caution"
+    "bird": "caution",
+    "reptile": "caution"
    },
    "notes": {
     "en": "A piece of dried bread does no harm but has zero benefit. Fresh pastry and raw dough are harmful and dangerous.",
@@ -788,7 +827,9 @@
    },
    "verdicts": {
     "dog": "caution",
-    "cat": "caution"
+    "cat": "caution",
+    "bird": "caution",
+    "reptile": "caution"
    },
    "toxin": "Raw/green potato: solanine",
    "notes": {
@@ -816,7 +857,8 @@
    },
    "verdicts": {
     "dog": "caution",
-    "cat": "caution"
+    "cat": "caution",
+    "reptile": "caution"
    },
    "toxin": "Green parts of nightshades: solanine",
    "notes": {
@@ -1056,7 +1098,7 @@
     "ru": "Сырая фасоль содержит фазин — для птиц смертельно опасна. Варёные бобовые — отдельный вопрос по виду."
    },
    "sources": [
-    "https://bio.vet/chto-delat/"
+    "https://www.aspca.org/pet-care/animal-poison-control"
    ],
    "evidence": "clinic-reviewed"
   },
@@ -1114,7 +1156,7 @@
     "ru": "Оксалаты связывают кальций — рептилиям и кроликам лишь изредка, животным с МКБ — нельзя."
    },
    "sources": [
-    "https://bio.vet/chto-delat/"
+    "https://www.aspca.org/pet-care/animal-poison-control"
    ],
    "evidence": "clinic-reviewed"
   },
@@ -1169,7 +1211,7 @@
     "ru": "Корм другого вида не сбалансирован под вашего питомца: кроликам мясные корма запрещены, остальным — не система."
    },
    "sources": [
-    "https://bio.vet/chto-delat/"
+    "https://www.aspca.org/pet-care/animal-poison-control"
    ],
    "evidence": "clinic-reviewed"
   },
@@ -1281,6 +1323,7 @@
     "ru": "Ликорин, особенно в луковицах: сильная рвота, судороги при большой дозе."
    },
    "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/koshka-est-cvety-iz-buketa/",
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
    ],
    "evidence": "consensus"
@@ -1302,18 +1345,21 @@
    "verdicts": {
     "dog": "danger",
     "cat": "danger",
-    "rabbit_rodent": "danger"
+    "rabbit_rodent": "danger",
+    "bird": "danger",
+    "reptile": "danger"
    },
    "toxin": "Grayanotoxins",
    "notes": {
-    "en": "Grayanotoxins: vomiting, cardiac rhythm disturbances — even a few leaves are dangerous.",
-    "ru": "Грайанотоксины: рвота, нарушения ритма сердца — опасны даже несколько листьев."
+    "en": "Grayanotoxins: even a few leaves cause vomiting, weakness, bradycardia, and a drop in blood pressure; coma is possible. One of the genuinely dangerous houseplants/garden plants — if eaten, go straight to the clinic.",
+    "ru": "Грейанотоксины: даже несколько листьев вызывают рвоту, слабость, брадикардию, падение давления; возможна кома. Одно из по-настоящему опасных комнатных/садовых растений — при поедании сразу в клинику."
    },
    "sources": [
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants",
-    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/"
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/azalea"
    ],
-   "evidence": "consensus"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "oleander",
@@ -1340,6 +1386,7 @@
     "ru": "Один из самых ядовитых декоративных кустарников: сердечные гликозиды, смертельно всем видам."
    },
    "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
    ],
    "evidence": "consensus"
@@ -1359,18 +1406,22 @@
    "scientific_name": "Dieffenbachia spp.",
    "verdicts": {
     "dog": "danger",
-    "cat": "danger"
+    "cat": "danger",
+    "rabbit_rodent": "danger",
+    "bird": "danger",
+    "reptile": "caution"
    },
    "toxin": "Insoluble calcium oxalate raphides",
    "notes": {
-    "en": "Oxalate \"needles\": instant burning and swelling of the mouth and larynx — choking risk.",
-    "ru": "Оксалатные «иглы»: мгновенный ожог и отёк рта и гортани — риск удушья."
+    "en": "Calcium oxalates: chewing causes severe mouth pain and swelling, drooling, and possible throat swelling with risk of choking. One of the most common houseplant poisonings in cats and puppies. If your pet has chewed it, wipe out the mouth, offer water, and go to the vet right away.",
+    "ru": "Оксалаты кальция: при разжёвывании — сильная боль и отёк рта, слюнотечение, возможен отёк гортани с удушьем. Одно из самых частых комнатных отравлений у кошек и щенков. Погрыз — убрать остатки изо рта, предложить воду и сразу к врачу."
    },
    "sources": [
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants",
-    "https://bio.vet/wiki/voprosy/monstera-i-aroidnye-yadovity-li/"
+    "https://bio.vet/wiki/voprosy/monstera-i-aroidnye-yadovity-li/",
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/dieffenbachia"
    ],
-   "evidence": "consensus"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "monstera-philodendron",
@@ -1388,18 +1439,21 @@
    "scientific_name": "Monstera deliciosa, Philodendron spp.",
    "verdicts": {
     "dog": "caution",
-    "cat": "caution"
+    "cat": "caution",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
    },
    "toxin": "Insoluble calcium oxalates",
    "notes": {
-    "en": "Oxalates: mouth burning, drooling, vomiting. Rarely life-threatening, but keep the pet away from the plant.",
-    "ru": "Оксалаты: жжение во рту, слюнотечение, рвота. Редко опасно для жизни, но питомца от растения убрать."
+    "en": "Calcium oxalates: burning in the mouth, drooling, vomiting when leaves are chewed. Usually limited to irritation; an exam is warranted if the animal refuses food.",
+    "ru": "Оксалаты кальция: жжение во рту, слюнотечение, рвота при разжёвывании листьев. Как правило, ограничивается раздражением; при отказе от еды — осмотр."
    },
    "sources": [
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants",
     "https://bio.vet/wiki/voprosy/monstera-i-aroidnye-yadovity-li/"
    ],
-   "evidence": "typical"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "peace-lily",
@@ -1410,23 +1464,28 @@
      "spathiphyllum"
     ],
     "ru": [
-     "спатифиллум"
+     "спатифиллум",
+     "женское счастье"
     ]
    },
    "scientific_name": "Spathiphyllum spp.",
    "verdicts": {
     "dog": "caution",
-    "cat": "caution"
+    "cat": "caution",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
    },
    "toxin": "Insoluble calcium oxalates",
    "notes": {
-    "en": "Calcium oxalates: mouth and GI irritation when chewed.",
-    "ru": "Оксалаты кальция: раздражение рта и ЖКТ при погрызании."
+    "en": "Calcium oxalates: burning and irritation of the mouth, drooling, vomiting. There is usually no systemic poisoning, but an animal with mouth pain and loss of appetite should be seen by a vet.",
+    "ru": "Оксалаты кальция: жжение и раздражение рта, слюнотечение, рвота. Системного отравления обычно нет, но животное с болью во рту и отказом от еды стоит показать врачу."
    },
    "sources": [
+    "https://bio.vet/wiki/voprosy/monstera-i-aroidnye-yadovity-li/",
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
    ],
-   "evidence": "typical"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "snake-plant",
@@ -1438,23 +1497,28 @@
     ],
     "ru": [
      "сансевиерия",
-     "щучий хвост"
+     "щучий хвост",
+     "тёщин язык"
     ]
    },
    "scientific_name": "Dracaena trifasciata (Sansevieria)",
    "verdicts": {
     "dog": "caution",
-    "cat": "caution"
+    "cat": "caution",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
    },
    "toxin": "Saponins",
    "notes": {
-    "en": "Saponins: vomiting and diarrhea if eaten. Keep out of reach.",
-    "ru": "Сапонины: рвота, понос при поедании. Ставьте выше досягаемости."
+    "en": "Saponins: nausea, vomiting, and diarrhea from eating the leaves. Toxicity is moderate; the main thing is not to let them chew on it regularly.",
+    "ru": "Сапонины: тошнота, рвота, диарея при поедании листьев. Токсичность умеренная; главное — не давать грызть регулярно."
    },
    "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
    ],
-   "evidence": "typical"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "aloe",
@@ -1471,17 +1535,22 @@
    "scientific_name": "Aloe vera",
    "verdicts": {
     "dog": "caution",
-    "cat": "caution"
+    "cat": "caution",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
    },
    "toxin": "Anthraquinone glycosides (aloin) in the latex layer",
    "notes": {
-    "en": "The inner gel is safer, but the skin and latex act as a laxative and emetic for pets.",
-    "ru": "Мякоть безопаснее, но кожица и сок — слабительное и рвотное для питомцев."
+    "en": "Anthraquinones and saponins in the leaf skin: vomiting, diarrhea, lethargy; the gel inside the leaf is mildly toxic. Don't use aloe to \"treat\" your pet — the irritation outweighs any benefit.",
+    "ru": "Антрахиноны и сапонины в кожице листа: рвота, диарея, вялость; гель внутри листа малотоксичен. Не давайте «лечить» питомца алоэ — раздражение перевешивает пользу."
    },
    "sources": [
-    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants",
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/aloe"
    ],
-   "evidence": "typical"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "ficus",
@@ -1498,17 +1567,21 @@
    "scientific_name": "Ficus spp.",
    "verdicts": {
     "dog": "caution",
-    "cat": "caution"
+    "cat": "caution",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
    },
    "toxin": "Irritant milky sap (ficin)",
    "notes": {
-    "en": "The milky sap irritates skin, mouth and stomach.",
-    "ru": "Млечный сок раздражает кожу, рот и желудок."
+    "en": "Milky sap (ficin): irritation of skin and mucous membranes, drooling, vomiting; sensitive animals may develop dermatitis. Severe poisoning is rare.",
+    "ru": "Млечный сок (фикусин): раздражение кожи и слизистых, слюнотечение, рвота; у чувствительных животных — дерматит. Тяжёлые отравления редки."
    },
    "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
    ],
-   "evidence": "typical"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "zz-plant",
@@ -1519,23 +1592,28 @@
      "zamioculcas"
     ],
     "ru": [
-     "замиокулькас"
+     "замиокулькас",
+     "долларовое дерево"
     ]
    },
    "scientific_name": "Zamioculcas zamiifolia",
    "verdicts": {
     "dog": "caution",
-    "cat": "caution"
+    "cat": "caution",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
    },
    "toxin": "Insoluble calcium oxalates",
    "notes": {
-    "en": "Oxalates: mucous membrane irritation when chewed — like most aroids.",
-    "ru": "Оксалаты: раздражение слизистых при погрызании — как у большинства ароидных."
+    "en": "Calcium oxalates in all parts of the plant: irritation of mucous membranes, drooling, vomiting. Severe poisoning is rare; keep it out of reach, and see a vet for persistent vomiting.",
+    "ru": "Оксалаты кальция во всех частях: раздражение слизистых, слюнотечение, рвота. Тяжёлые отравления редки; держите вне доступа, при стойкой рвоте — к врачу."
    },
    "sources": [
+    "https://bio.vet/wiki/voprosy/monstera-i-aroidnye-yadovity-li/",
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
    ],
-   "evidence": "typical"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "ivy",
@@ -1546,25 +1624,29 @@
      "english ivy"
     ],
     "ru": [
-     "плющ"
+     "плющ",
+     "хедера"
     ]
    },
    "scientific_name": "Hedera helix",
    "verdicts": {
     "dog": "caution",
     "cat": "caution",
-    "rabbit_rodent": "danger"
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
    },
    "toxin": "Triterpenoid saponins (hederagenin), leaves more toxic than berries",
    "notes": {
-    "en": "Saponins, leaves more toxic than berries: vomiting, abdominal pain; especially dangerous for rabbits.",
-    "ru": "Сапонины, листья токсичнее ягод: рвота, боли; кроликам особенно опасен."
+    "en": "Saponins, concentrated mostly in the leaves: drooling, vomiting, diarrhea, and abdominal pain with a large amount eaten. Contact with the sap can irritate the skin.",
+    "ru": "Сапонины, максимум — в листьях: слюнотечение, рвота, диарея, при большом объёме — боль в животе. Контакт с соком может раздражать кожу."
    },
    "sources": [
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants",
-    "https://bio.vet/wiki/voprosy/gryzuny/yadovitye-rasteniya-dlya-krolikov/"
+    "https://bio.vet/wiki/voprosy/gryzuny/yadovitye-rasteniya-dlya-krolikov/",
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/english-ivy-0"
    ],
-   "evidence": "consensus"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "cyclamen",
@@ -1580,17 +1662,22 @@
    "scientific_name": "Cyclamen spp.",
    "verdicts": {
     "dog": "danger",
-    "cat": "danger"
+    "cat": "danger",
+    "rabbit_rodent": "danger",
+    "bird": "danger",
+    "reptile": "caution"
    },
    "toxin": "Terpenoid saponins, concentrated in tubers",
    "notes": {
-    "en": "Especially the tubers: severe vomiting; heart rhythm disturbances at high doses.",
-    "ru": "Особенно клубни: сильная рвота, при большой дозе — нарушения ритма."
+    "en": "Triterpenoid saponins, concentrated mostly in the tubers: severe vomiting, diarrhea, and, if a tuber is eaten, heart rhythm disturbances and seizures. If a dog digs up and eats a tuber, go to the clinic immediately.",
+    "ru": "Тритерпеновые сапонины, больше всего — в клубнях: сильная рвота, диарея, при поедании клубня — нарушения ритма сердца и судороги. Клубень выкопала собака — экстренно в клинику."
    },
    "sources": [
-    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants",
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/cyclamen"
    ],
-   "evidence": "consensus"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "kalanchoe",
@@ -1606,45 +1693,53 @@
    "scientific_name": "Kalanchoe spp.",
    "verdicts": {
     "dog": "danger",
-    "cat": "danger"
+    "cat": "danger",
+    "rabbit_rodent": "danger",
+    "bird": "danger",
+    "reptile": "danger"
    },
    "toxin": "Bufadienolides (cardiac toxins)",
    "notes": {
-    "en": "Cardiac toxins (bufadienolides): vomiting, arrhythmia.",
-    "ru": "Сердечные токсины (буфадиенолиды): рвота, аритмия."
+    "en": "Contains bufadienolides — cardiac toxins: vomiting, diarrhea, and at high doses, heart rhythm disturbances. A folk \"medicinal\" plant, but dangerous for pets. If eaten, go to the clinic — don't just watch and wait.",
+    "ru": "Содержит буфадиенолиды — сердечные токсины: рвота, диарея, при большой дозе — нарушения сердечного ритма. Народное «лечебное» растение, но для питомцев опасно. Поедание — повод ехать в клинику, не наблюдать."
    },
    "sources": [
-    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants",
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/kalanchoe"
    ],
-   "evidence": "consensus"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "euphorbia-poinsettia",
    "category": "plant",
    "names": {
     "en": [
-     "euphorbia",
      "poinsettia"
     ],
     "ru": [
-     "молочай",
-     "пуансеттия"
+     "пуансеттия",
+     "рождественская звезда"
     ]
    },
    "scientific_name": "Euphorbia spp.",
    "verdicts": {
     "dog": "caution",
-    "cat": "caution"
+    "cat": "caution",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
    },
    "toxin": "Irritant milky latex",
    "notes": {
-    "en": "Caustic milky sap: mouth and stomach irritation. Poinsettia's toxicity is exaggerated, but it offers nothing good either.",
-    "ru": "Едкий млечный сок: раздражение рта и желудка. Ядовитость пуансеттии преувеличена, но и полезного мало."
+    "en": "Its \"deadly\" reputation is greatly exaggerated: the milky sap irritates the mouth and stomach — drooling, a single bout of vomiting. Serious poisoning is a rarity, but don't let pets chew on it regardless.",
+    "ru": "Репутация «смертельной» сильно преувеличена: млечный сок раздражает рот и желудок — слюнотечение, разовая рвота. Серьёзные отравления — казуистика, но грызть не давайте."
    },
    "sources": [
-    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants",
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/poinsettia"
    ],
-   "evidence": "typical"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "sago-palm",
@@ -1670,6 +1765,7 @@
     "ru": "Циказин: тяжёлое поражение печени, высокая летальность. Все части, особенно семена."
    },
    "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
    ],
    "evidence": "consensus"
@@ -1723,6 +1819,7 @@
     "ru": "Цианогенные гликозиды в листьях и бутонах: рвота, вялость при поедании."
    },
    "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
    ],
    "evidence": "typical"
@@ -1749,6 +1846,7 @@
     "ru": "Пиретрины: слюнотечение, рвота, шаткость — особенно у кошек."
    },
    "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
    ],
    "evidence": "typical"
@@ -1769,17 +1867,21 @@
    "scientific_name": "Pelargonium spp.",
    "verdicts": {
     "dog": "caution",
-    "cat": "caution"
+    "cat": "caution",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
    },
    "toxin": "Essential oils (geraniol, linalool)",
    "notes": {
-    "en": "Essential oils: vomiting, contact dermatitis.",
-    "ru": "Эфирные масла: рвота, дерматит при контакте."
+    "en": "Geraniol and linalool: vomiting and reduced appetite in cats and dogs, dermatitis on contact. The toxicity level is moderate.",
+    "ru": "Гераниол и линалоол: у кошек и собак — рвота, сниженный аппетит, дерматит при контакте. Уровень токсичности умеренный."
    },
    "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
    ],
-   "evidence": "typical"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "autumn-crocus",
@@ -1806,6 +1908,7 @@
     "ru": "Колхицин: кровавая рвота, полиорганная недостаточность. Одно из самых опасных садовых растений."
    },
    "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/koshka-est-cvety-iz-buketa/",
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
    ],
    "evidence": "consensus"
@@ -1834,6 +1937,7 @@
     "ru": "Таксины: остановка сердца, счёт на минуты. Ветки и иглы опасны даже сухими."
    },
    "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
    ],
    "evidence": "consensus"
@@ -1852,17 +1956,21 @@
    "scientific_name": "Dracaena spp.",
    "verdicts": {
     "dog": "caution",
-    "cat": "caution"
+    "cat": "caution",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
    },
    "toxin": "Saponins",
    "notes": {
-    "en": "Saponins: in cats vomiting (sometimes with blood), dilated pupils.",
-    "ru": "Сапонины: у кошек рвота (иногда с кровью), расширенные зрачки."
+    "en": "Saponins: vomiting (sometimes with blood), drooling, and in cats — dilated pupils and unsteadiness. It usually resolves on its own, but repeated vomiting and lethargy call for a vet visit.",
+    "ru": "Сапонины: рвота (иногда с кровью), слюнотечение, у кошек — расширенные зрачки и шаткость. Обычно проходит, но при повторной рвоте и вялости — к врачу."
    },
    "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
    ],
-   "evidence": "typical"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "spider-plant",
@@ -1879,17 +1987,21 @@
    "scientific_name": "Chlorophytum comosum",
    "verdicts": {
     "dog": "safe",
-    "cat": "safe"
+    "cat": "safe",
+    "rabbit_rodent": "safe",
+    "bird": "caution",
+    "reptile": "safe"
    },
    "notes": {
-    "en": "Non-toxic (cats love chewing it) — though a large amount can cause vomiting purely mechanically.",
-    "ru": "Нетоксичен (кошки его любят жевать) — но в большом количестве может вызвать рвоту просто механически."
+    "en": "According to the ASPCA it is non-toxic to cats and dogs. Cats are drawn to the grass-like leaves — overeating can cause a one-off bout of vomiting, which is not poisoning. One of the safest houseplants for cat owners.",
+    "ru": "По ASPCA нетоксичен для кошек и собак. Кошек трава привлекает — при переедании возможна разовая рвота, это не отравление. Один из самых безопасных «кошачьих» комнатных растений."
    },
    "sources": [
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants",
-    "https://bio.vet/wiki/voprosy/koshki/bezopasnye-rasteniya-dlya-doma/"
+    "https://bio.vet/wiki/voprosy/koshki/bezopasnye-rasteniya-dlya-doma/",
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/spider-plant"
    ],
-   "evidence": "typical"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "cat-grass",
@@ -1938,17 +2050,20 @@
    "scientific_name": "Phalaenopsis spp.",
    "verdicts": {
     "dog": "safe",
-    "cat": "safe"
+    "cat": "safe",
+    "rabbit_rodent": "safe",
+    "bird": "safe",
+    "reptile": "safe"
    },
    "notes": {
-    "en": "Phalaenopsis orchids are non-toxic to cats and dogs — a rare safe bouquet flower.",
-    "ru": "Фаленопсисы нетоксичны для кошек и собак — редкий безопасный цветок в букете."
+    "en": "The moth orchid is non-toxic to cats and dogs. The only real danger is the fertilizer or feeding sticks in the pot — keep those out of reach.",
+    "ru": "Фаленопсис нетоксичен для кошек и собак. Опасность могут представлять только удобрения и палочки-подкормки в горшке — их держите вне доступа."
    },
    "sources": [
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants",
     "https://bio.vet/wiki/voprosy/koshki/mozhno-li-derzhat-orhideyu/"
    ],
-   "evidence": "typical"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "african-violet",
@@ -1967,17 +2082,19 @@
    "verdicts": {
     "dog": "safe",
     "cat": "safe",
-    "rabbit_rodent": "safe"
+    "rabbit_rodent": "safe",
+    "bird": "safe",
+    "reptile": "safe"
    },
    "notes": {
-    "en": "African violets are safe — a good choice for a home with pets.",
-    "ru": "Узамбарская фиалка безопасна — хороший выбор для дома с питомцами."
+    "en": "According to the ASPCA, the African violet is non-toxic to cats and dogs. A single chewed leaf is not dangerous; regular grazing harms the plant more than the pet.",
+    "ru": "Узамбарская фиалка по ASPCA нетоксична для кошек и собак. Разово погрызенный лист неопасен; регулярное объедание вредит скорее растению."
    },
    "sources": [
     "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants",
     "https://bio.vet/wiki/voprosy/koshki/bezopasnye-rasteniya-dlya-doma/"
    ],
-   "evidence": "typical"
+   "evidence": "clinic-reviewed"
   },
   {
    "id": "sedge-wild-grass",
@@ -2033,7 +2150,7 @@
     "ru": "Пшеница не токсична, но это частый пищевой аллерген у собак и просто лишние углеводы для кошки-хищника. Грызунам и птицам зерно подходит. Если у питомца зуд или проблемы со стулом — злаки первым делом обсуждают с врачом."
    },
    "sources": [
-    "https://bio.vet/mozhno-li/"
+    "https://www.aspca.org/pet-care/animal-poison-control"
    ],
    "evidence": "consensus"
   },
@@ -2064,7 +2181,7 @@
     "ru": "Ячмень и перловка не ядовиты, но тяжело перевариваются у кошек и часть собак на них реагирует кожей и стулом. Птицам и грызунам зерно подходит. Важно: если вы ищете «ячмень» как шишку на веке у питомца — это не еда, а воспаление, его должен посмотреть врач."
    },
    "sources": [
-    "https://bio.vet/mozhno-li/"
+    "https://www.aspca.org/pet-care/animal-poison-control"
    ],
    "evidence": "consensus"
   },
@@ -2090,9 +2207,611 @@
     "ru": "Спелая мякоть без косточки и кожуры в малом количестве обычно не опасна, но косточка и незрелые плоды токсичны, а сладкие фрукты питомцам не нужны. Съел косточку или много плодов — позвоните врачу."
    },
    "sources": [
-    "https://bio.vet/mozhno-li/"
+    "https://www.aspca.org/pet-care/animal-poison-control"
    ],
    "evidence": "consensus"
+  },
+  {
+   "id": "alstroemeria",
+   "category": "plant",
+   "names": {
+    "en": [
+     "alstroemeria",
+     "Peruvian lily"
+    ],
+    "ru": [
+     "альстромерия"
+    ]
+   },
+   "scientific_name": "Alstroemeria",
+   "verdicts": {
+    "dog": "safe",
+    "cat": "safe",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
+   },
+   "notes": {
+    "en": "Alstroemeria (\"Peruvian lily\") is NOT a true lily and is not lethal to cats: it is considered mildly toxic. The sap can irritate skin and mucous membranes, and eating it may cause mild GI upset. Don't confuse it with Lilium/Hemerocallis lilies, which are lethally toxic to cats.",
+    "ru": "Альстромерия («перуанская лилия») — НЕ настоящая лилия и для кошек не смертельна: считается малотоксичной. Сок может раздражать кожу и слизистые, при поедании — лёгкое расстройство ЖКТ. Не путать с лилиями Lilium/Hemerocallis, которые для кошек смертельно опасны."
+   },
+   "sources": [
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/peruvian-lily",
+    "https://bio.vet/wiki/voprosy/koshki/lilii-yadovity-dlya-koshek/"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "rose",
+   "category": "plant",
+   "names": {
+    "en": [
+     "rose"
+    ],
+    "ru": [
+     "роза",
+     "розы"
+    ]
+   },
+   "scientific_name": "Rosa",
+   "verdicts": {
+    "dog": "safe",
+    "cat": "safe",
+    "rabbit_rodent": "safe",
+    "bird": "safe",
+    "reptile": "caution"
+   },
+   "notes": {
+    "en": "Roses are not toxic. The danger is the thorns (mouth and paw injuries) and treatments used on cut flowers: bouquet roses may be sprayed with pesticides and preservatives — don't let pets drink the vase water.",
+    "ru": "Роза не ядовита. Опасность — шипы (раны рта и лап) и средства обработки срезанных цветов: букетные розы могут быть опрысканы пестицидами и консервантами, воду из вазы пить не давайте."
+   },
+   "sources": [
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/rose"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "peony",
+   "category": "plant",
+   "names": {
+    "en": [
+     "peony"
+    ],
+    "ru": [
+     "пион",
+     "пионы"
+    ]
+   },
+   "scientific_name": "Paeonia",
+   "verdicts": {
+    "dog": "caution",
+    "cat": "caution",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
+   },
+   "notes": {
+    "en": "Peonies contain paeonol — eating them causes vomiting and diarrhea, but serious poisoning is uncommon. Keep bouquets out of reach, especially from kittens and puppies that chew on everything.",
+    "ru": "Пион содержит пеонол — при поедании вызывает рвоту и диарею, серьёзных отравлений обычно не бывает. Держите букет вне доступа, особенно от котят и щенков, которые грызут всё подряд."
+   },
+   "sources": [
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/peony"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "eucalyptus",
+   "category": "plant",
+   "names": {
+    "en": [
+     "eucalyptus"
+    ],
+    "ru": [
+     "эвкалипт"
+    ]
+   },
+   "scientific_name": "Eucalyptus",
+   "verdicts": {
+    "dog": "danger",
+    "cat": "danger",
+    "rabbit_rodent": "danger",
+    "bird": "danger",
+    "reptile": "caution"
+   },
+   "notes": {
+    "en": "Eucalyptus (branches in bouquets, the essential oil, and \"eucalyptus shower\" products) is toxic: eucalyptol causes drooling, vomiting, and weakness; the oil is especially dangerous for cats, which lack the enzyme to process it. An oil diffuser in a room with a cat is also a risk.",
+    "ru": "Эвкалипт (и веточки в букетах, и эфирное масло, и «эвкалипт для душа») токсичен: эвкалиптол вызывает слюнотечение, рвоту, слабость; масло — особенно опасно для кошек, у них нет фермента для его переработки. Диффузоры с маслом в комнате с кошкой — тоже риск."
+   },
+   "sources": [
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/eucalyptus"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "mimosa",
+   "category": "plant",
+   "names": {
+    "en": [
+     "mimosa",
+     "silver wattle",
+     "acacia"
+    ],
+    "ru": [
+     "мимоза",
+     "акация серебристая"
+    ]
+   },
+   "scientific_name": "Acacia dealbata",
+   "verdicts": {
+    "dog": "safe",
+    "cat": "safe",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
+   },
+   "notes": {
+    "en": "The \"mimosa\" from spring bouquets — silver wattle — is not toxic to cats or dogs. The pollen may irritate the airways of sensitive animals; it's still best not to let them chew the branches themselves — the fibers are coarse.",
+    "ru": "«Мимоза» из весенних букетов — акация серебристая — для кошек и собак не токсична. Пыльца может раздражать дыхательные пути у чувствительных животных; сами веточки лучше не давать жевать — грубые волокна."
+   },
+   "sources": [
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "euphorbia",
+   "category": "plant",
+   "names": {
+    "en": [
+     "euphorbia",
+     "spurge"
+    ],
+    "ru": [
+     "молочай",
+     "эуфорбия"
+    ]
+   },
+   "scientific_name": "Euphorbia",
+   "verdicts": {
+    "dog": "danger",
+    "cat": "danger",
+    "rabbit_rodent": "danger",
+    "bird": "danger",
+    "reptile": "danger"
+   },
+   "notes": {
+    "en": "Caustic milky sap: burns to mucous membranes, drooling, vomiting; if it gets in the eyes, keratitis can result. Keep all euphorbias out of pets' reach; if eaten, rinse the mouth and go to the vet.",
+    "ru": "Едкий млечный сок: ожоги слизистых, слюнотечение, рвота; при попадании в глаза — кератит. Все молочайные держать вне доступа животных; при поедании — промыть рот и к врачу."
+   },
+   "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "ibuprofen-nsaids",
+   "category": "medication",
+   "names": {
+    "en": [
+     "ibuprofen",
+     "human NSAIDs",
+     "diclofenac",
+     "naproxen"
+    ],
+    "ru": [
+     "ибупрофен",
+     "нурофен",
+     "диклофенак",
+     "напроксен",
+     "человеческие НПВС"
+    ]
+   },
+   "verdicts": {
+    "dog": "danger",
+    "cat": "danger"
+   },
+   "toxin": "Human NSAIDs — gastric ulceration, kidney failure",
+   "notes": {
+    "en": "Human anti-inflammatories cause stomach ulcers and kidney failure in pets. There are veterinary NSAIDs with safe dosing — never share your own painkillers.",
+    "ru": "Человеческие противовоспалительные вызывают у животных язвы желудка и отказ почек. Существуют ветеринарные НПВС с безопасными дозами — не делитесь своими таблетками."
+   },
+   "sources": [
+    "https://www.merckvetmanual.com/toxicology/toxicities-from-human-drugs/analgesics-toxicosis-in-animals"
+   ],
+   "evidence": "clinic-reviewed",
+   "toxic_dose": "Dogs: signs from ~25–50 mg/kg ibuprofen; cats ~2× more sensitive"
+  },
+  {
+   "id": "aspirin",
+   "category": "medication",
+   "names": {
+    "en": [
+     "aspirin",
+     "acetylsalicylic acid"
+    ],
+    "ru": [
+     "аспирин",
+     "ацетилсалициловая кислота"
+    ]
+   },
+   "verdicts": {
+    "dog": "danger",
+    "cat": "danger"
+   },
+   "toxin": "Salicylates — GI bleeding; cats metabolize extremely slowly",
+   "notes": {
+    "en": "Causes gastric bleeding; especially dangerous for cats (very slow elimination). Only a vet may prescribe salicylates, at veterinary doses.",
+    "ru": "Вызывает желудочные кровотечения; особенно опасен кошкам (очень медленное выведение). Салицилаты назначает только врач в ветеринарных дозах."
+   },
+   "sources": [
+    "https://www.merckvetmanual.com/toxicology/toxicities-from-human-drugs/analgesics-toxicosis-in-animals"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "antifreeze",
+   "category": "household",
+   "names": {
+    "en": [
+     "antifreeze",
+     "ethylene glycol"
+    ],
+    "ru": [
+     "антифриз",
+     "этиленгликоль",
+     "тосол"
+    ]
+   },
+   "verdicts": {
+    "dog": "danger",
+    "cat": "danger"
+   },
+   "toxin": "Ethylene glycol — crystalluria, acute kidney failure; sweet taste attracts animals",
+   "notes": {
+    "en": "One of the deadliest household poisons: tastes sweet, a couple of licks from a puddle can kill a cat. The antidote works only in the first hours — go to a clinic IMMEDIATELY.",
+    "ru": "Один из самых смертоносных бытовых ядов: сладкий на вкус, кошке хватает пары глотков из лужицы. Антидот работает только в первые часы — в клинику НЕМЕДЛЕННО."
+   },
+   "sources": [
+    "https://www.merckvetmanual.com/toxicology/ethylene-glycol-toxicosis/ethylene-glycol-toxicosis-in-animals"
+   ],
+   "evidence": "clinic-reviewed",
+   "toxic_dose": "Cats: ~1.5 ml/kg; dogs: ~4–6 ml/kg — a few licks can be lethal for a cat"
+  },
+  {
+   "id": "rodenticide",
+   "category": "household",
+   "names": {
+    "en": [
+     "rat poison",
+     "rodenticide"
+    ],
+    "ru": [
+     "крысиный яд",
+     "родентицид",
+     "отрава от грызунов"
+    ]
+   },
+   "verdicts": {
+    "dog": "danger",
+    "cat": "danger"
+   },
+   "toxin": "Anticoagulants (brodifacoum etc.) — internal bleeding 3–5 days after ingestion",
+   "notes": {
+    "en": "Bleeding starts 3–5 days AFTER ingestion, when owners no longer connect symptoms to the bait. Bring the bait package to the clinic — the antidote depends on the active ingredient. Cats also poison themselves by eating poisoned rodents.",
+    "ru": "Кровотечение начинается через 3–5 дней ПОСЛЕ поедания, когда хозяева уже не связывают симптомы с приманкой. Возьмите упаковку яда в клинику — антидот зависит от действующего вещества. Кошки травятся и съев отравленного грызуна."
+   },
+   "sources": [
+    "https://www.merckvetmanual.com/toxicology/rodenticide-poisoning/anticoagulant-rodenticide-poisoning-in-animals"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "permethrin",
+   "category": "household",
+   "names": {
+    "en": [
+     "permethrin (dog flea products on cats)"
+    ],
+    "ru": [
+     "перметрин",
+     "собачьи капли от блох у кошки"
+    ]
+   },
+   "verdicts": {
+    "dog": "safe",
+    "cat": "danger"
+   },
+   "toxin": "Permethrin — feline neurotoxin: tremors, seizures",
+   "notes": {
+    "en": "Dog flea/tick spot-ons with permethrin are DEADLY to cats — even contact with a treated dog matters. Always check the label: 'for dogs only' means it.",
+    "ru": "Собачьи капли от блох/клещей с перметрином СМЕРТЕЛЬНЫ для кошек — опасен даже контакт с обработанной собакой. Читайте этикетку: «только для собак» — это всерьёз."
+   },
+   "sources": [
+    "https://www.merckvetmanual.com/toxicology/insecticide-and-acaricide-organic-toxicity/pyrethrins-and-pyrethroids-toxicosis-in-animals"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "household-bleach",
+   "category": "household",
+   "names": {
+    "en": [
+     "bleach",
+     "chlorine cleaners"
+    ],
+    "ru": [
+     "отбеливатель",
+     "хлорка",
+     "белизна"
+    ]
+   },
+   "verdicts": {
+    "dog": "danger",
+    "cat": "danger"
+   },
+   "toxin": "Corrosive: burns of mouth, esophagus, stomach",
+   "notes": {
+    "en": "Concentrated chlorine cleaners burn mucous membranes; cats also lick fumes-covered fur. Do NOT induce vomiting with corrosives — rinse the mouth and go to a clinic.",
+    "ru": "Концентрированная хлорка обжигает слизистые; кошки слизывают её и с шерсти. При едких веществах рвоту НЕ вызывать — прополоскать рот и в клинику."
+   },
+   "sources": [
+    "https://www.merckvetmanual.com/toxicology/household-hazards/household-hazards-in-animals"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "laundry-pods",
+   "category": "household",
+   "names": {
+    "en": [
+     "laundry pods",
+     "detergent capsules"
+    ],
+    "ru": [
+     "капсулы для стирки",
+     "стиральные капсулы"
+    ]
+   },
+   "verdicts": {
+    "dog": "danger",
+    "cat": "danger"
+   },
+   "toxin": "Concentrated surfactants — mucosal burns, aspiration pneumonia from foam",
+   "notes": {
+    "en": "Bright capsules look like toys; bitten ones release concentrate — burns and foam aspiration into the lungs.",
+    "ru": "Яркие капсулы похожи на игрушки; прокушенная выбрасывает концентрат — ожоги и попадание пены в лёгкие."
+   },
+   "sources": [
+    "https://www.merckvetmanual.com/toxicology/household-hazards/household-hazards-in-animals"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "essential-oils",
+   "category": "household",
+   "names": {
+    "en": [
+     "essential oils",
+     "tea tree oil"
+    ],
+    "ru": [
+     "эфирные масла",
+     "масло чайного дерева",
+     "аромадиффузор"
+    ]
+   },
+   "verdicts": {
+    "dog": "caution",
+    "cat": "danger"
+   },
+   "toxin": "Phenolic compounds — cats cannot glucuronidate; tea tree oil most dangerous",
+   "notes": {
+    "en": "Cats cannot metabolize essential-oil compounds: diffusers in a closed room, oil on fur or paws cause tremors and liver damage. Tea tree oil is the worst — never apply to animals.",
+    "ru": "Кошки не перерабатывают компоненты эфирных масел: диффузор в закрытой комнате, масло на шерсти или лапах — тремор и поражение печени. Масло чайного дерева опаснее всего — не наносить на животных никогда."
+   },
+   "sources": [
+    "https://www.merckvetmanual.com/toxicology/household-hazards/household-hazards-in-animals"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "nicotine-vapes",
+   "category": "household",
+   "names": {
+    "en": [
+     "nicotine",
+     "cigarettes",
+     "vape liquid"
+    ],
+    "ru": [
+     "никотин",
+     "сигареты",
+     "жидкость для вейпа",
+     "снюс"
+    ]
+   },
+   "verdicts": {
+    "dog": "danger",
+    "cat": "danger"
+   },
+   "toxin": "Nicotine — tremors, seizures, respiratory failure",
+   "notes": {
+    "en": "Cigarette butts, nicotine pouches and especially vape liquid (high concentration) cause rapid poisoning: vomiting, tremors, seizures.",
+    "ru": "Окурки, никотиновые паучи и особенно жидкость для вейпов (высокая концентрация) дают быстрое отравление: рвота, тремор, судороги."
+   },
+   "sources": [
+    "https://www.merckvetmanual.com/toxicology/household-hazards/household-hazards-in-animals"
+   ],
+   "evidence": "clinic-reviewed",
+   "toxic_dose": "Signs from ~1 mg/kg; vape liquids are highly concentrated"
+  },
+  {
+   "id": "cannabis",
+   "category": "household",
+   "names": {
+    "en": [
+     "cannabis",
+     "marijuana",
+     "THC edibles"
+    ],
+    "ru": [
+     "марихуана",
+     "каннабис",
+     "ТГК"
+    ]
+   },
+   "verdicts": {
+    "dog": "danger",
+    "cat": "danger"
+   },
+   "toxin": "THC — ataxia, urinary incontinence, hypothermia; edibles often add chocolate/xylitol",
+   "notes": {
+    "en": "Dogs have more cannabinoid receptors than humans — even secondhand exposure matters; edibles combine THC with chocolate or xylitol. Tell the vet honestly what happened: treatment differs.",
+    "ru": "У собак каннабиноидных рецепторов больше, чем у людей; «съедобные» формы сочетают ТГК с шоколадом или ксилитом. Говорите врачу честно, что случилось — лечение отличается."
+   },
+   "sources": [
+    "https://www.merckvetmanual.com/toxicology/household-hazards/household-hazards-in-animals"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "batteries",
+   "category": "household",
+   "names": {
+    "en": [
+     "batteries",
+     "button cells"
+    ],
+    "ru": [
+     "батарейки",
+     "таблеточные батарейки"
+    ]
+   },
+   "verdicts": {
+    "dog": "danger",
+    "cat": "danger"
+   },
+   "toxin": "Electrochemical burns (esophagus perforation within hours) + heavy metals",
+   "notes": {
+    "en": "A swallowed button cell burns through the esophagus within hours — an emergency even without symptoms. Punctured batteries leak alkali.",
+    "ru": "Проглоченная «таблетка» прожигает пищевод за часы — это экстренный случай даже без симптомов. Прокушенные батарейки текут щёлочью."
+   },
+   "sources": [
+    "https://www.merckvetmanual.com/toxicology/household-hazards/household-hazards-in-animals"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "deicing-reagents",
+   "category": "household",
+   "names": {
+    "en": [
+     "de-icing salt",
+     "sidewalk reagents"
+    ],
+    "ru": [
+     "антигололёдные реагенты",
+     "техническая соль"
+    ]
+   },
+   "verdicts": {
+    "dog": "caution",
+    "cat": "caution"
+   },
+   "toxin": "Salts irritate paws; licking causes GI upset and sodium load",
+   "notes": {
+    "en": "Winter paw irritation and burns; dogs lick reagents off their paws. Wash paws after walks; consider protective wax or boots.",
+    "ru": "Зимой — раздражение и трещины лап; собаки слизывают реагенты с лап. Мыть лапы после прогулки; воск или ботинки — рабочая защита."
+   },
+   "sources": [
+    "https://www.aspca.org/pet-care/animal-poison-control"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "human-cold-drops",
+   "category": "medication",
+   "names": {
+    "en": [
+     "nasal drops (xylometazoline)",
+     "cold medicine"
+    ],
+    "ru": [
+     "капли в нос",
+     "ксилометазолин",
+     "нафтизин"
+    ]
+   },
+   "verdicts": {
+    "dog": "danger",
+    "cat": "danger"
+   },
+   "toxin": "Alpha-adrenergic agonists — bradycardia, collapse",
+   "notes": {
+    "en": "Human vasoconstrictor nasal drops cause dangerous heart-rate and blood-pressure drops in pets. Never self-treat a pet's runny nose with human drops.",
+    "ru": "Человеческие сосудосуживающие капли вызывают у животных опасное падение пульса и давления. Насморк питомца не лечат человеческими каплями."
+   },
+   "sources": [
+    "https://www.merckvetmanual.com/toxicology/toxicities-from-human-drugs/toxicities-from-human-drugs-in-animals"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "isoniazid",
+   "category": "medication",
+   "names": {
+    "en": [
+     "isoniazid"
+    ],
+    "ru": [
+     "изониазид",
+     "тубазид"
+    ]
+   },
+   "verdicts": {
+    "dog": "danger",
+    "cat": "danger"
+   },
+   "toxin": "Isoniazid — rapid seizures in dogs; used criminally by dog poisoners in RF",
+   "notes": {
+    "en": "TB drug, extremely toxic to dogs (seizures within 30–60 min). In Russia it is notoriously used in poisoned street baits — a walk hazard. Antidote is vitamin B6, minutes matter.",
+    "ru": "Противотуберкулёзный препарат, крайне токсичен собакам (судороги через 30–60 минут). В РФ печально известен как начинка отравленных приманок догхантеров. Антидот — витамин B6, счёт на минуты."
+   },
+   "sources": [
+    "https://www.aspca.org/pet-care/animal-poison-control"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "yogurt",
+   "category": "food",
+   "names": {
+    "en": [
+     "yogurt",
+     "fermented milk"
+    ],
+    "ru": [
+     "йогурт",
+     "ряженка"
+    ]
+   },
+   "verdicts": {
+    "dog": "caution",
+    "cat": "caution",
+    "rabbit_rodent": "danger",
+    "bird": "caution"
+   },
+   "toxin": "Lactose (most adult dogs and cats are lactase-deficient); xylitol in sweetened yogurts",
+   "notes": {
+    "en": "A little plain, unsweetened yogurt is usually harmless, but most adult cats and dogs lack lactase, so dairy causes diarrhoea. Never give yogurts with sweeteners — the xylitol in them is lethal to dogs. Start with a teaspoon and watch the stool.",
+    "ru": "Немного натурального йогурта без сахара обычно не вредит, но у большинства взрослых кошек и собак не хватает лактазы — молочное даёт диарею. Категорически нельзя йогурты с подсластителями: ксилит в них смертелен для собак. Начинать — с чайной ложки и смотреть на стул."
+   },
+   "sources": [
+    "https://www.aspca.org/pet-care/animal-poison-control/people-foods-avoid-feeding-your-pets",
+    "https://bio.vet/wiki/voprosy/sobaki/mozhno-li-sobake-moloko/"
+   ],
+   "evidence": "clinic-reviewed"
   }
  ]
 }
