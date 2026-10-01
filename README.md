@@ -14,7 +14,7 @@ checker at [bio.vet/mozhno-li](https://bio.vet/mozhno-li/).
 
 One file — [`data/items.json`](data/items.json):
 
-- **91 entries**: 42 foods, 35 house/garden plants, 4 human medications, 10 household chemicals and hazards
+- **101 entries**: 43 foods, 44 house/garden plants, 4 human medications, 10 household chemicals and hazards
 - **Per-species verdicts** (`safe` / `caution` / `danger`) for dogs, cats,
   rabbits & rodents, birds, reptiles
 - **Bilingual**: names and notes in English and Russian

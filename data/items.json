@@ -2,11 +2,11 @@
  "meta": {
   "name": "pet-food-safety",
   "description": "Vet-reviewed safety verdicts for foods, plants, human medications and household chemicals across pet species",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "license": "CC-BY-4.0",
   "attribution": "BioVet veterinary clinic network, Moscow — https://bio.vet",
   "reviewed_by": "Licensed veterinarians of the BioVet clinic network (20 round-the-clock clinics, Moscow)",
-  "last_review": "2026-09",
+  "last_review": "2026-10",
   "verdict_levels": {
    "safe": "Generally safe in moderation for a healthy animal",
    "caution": "Give only with restrictions described in notes, or avoid",
@@ -2810,6 +2810,291 @@
    "sources": [
     "https://www.aspca.org/pet-care/animal-poison-control/people-foods-avoid-feeding-your-pets",
     "https://bio.vet/wiki/voprosy/sobaki/mozhno-li-sobake-moloko/"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "begonia",
+   "category": "plant",
+   "names": {
+    "en": [
+     "begonia"
+    ],
+    "ru": [
+     "бегония"
+    ]
+   },
+   "scientific_name": "Begonia spp.",
+   "verdicts": {
+    "dog": "caution",
+    "cat": "caution",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
+   },
+   "toxin": "Soluble calcium oxalates",
+   "notes": {
+    "en": "Soluble calcium oxalates, most concentrated in the tubers and roots. Dogs and cats get drooling and vomiting; kidney failure has been described in grazing animals that ate large amounts. Ate a tuber or a lot of leaves — see a vet.",
+    "ru": "Растворимые оксалаты кальция, больше всего — в клубнях и корнях. У собак и кошек — слюнотечение и рвота; у пастбищных животных при поедании больших количеств описана почечная недостаточность. Съел клубень или много листьев — к врачу."
+   },
+   "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
+    "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/begonia"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "jade-plant",
+   "category": "plant",
+   "names": {
+    "en": [
+     "jade plant",
+     "crassula"
+    ],
+    "ru": [
+     "денежное дерево",
+     "крассула",
+     "толстянка"
+    ]
+   },
+   "scientific_name": "Crassula ovata",
+   "verdicts": {
+    "dog": "caution",
+    "cat": "caution",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
+   },
+   "toxin": "Unknown",
+   "notes": {
+    "en": "The toxic principle is unknown. After eating it — vomiting, lethargy, sometimes a wobbly gait. If signs appear, see a vet.",
+    "ru": "Токсичное вещество не установлено. После поедания — рвота, вялость, иногда шаткость походки. Если признаки появились — покажите врачу."
+   },
+   "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
+    "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/jade-plant"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "calla-lily",
+   "category": "plant",
+   "names": {
+    "en": [
+     "calla lily",
+     "zantedeschia"
+    ],
+    "ru": [
+     "калла",
+     "зантедеския"
+    ]
+   },
+   "scientific_name": "Zantedeschia aethiopica",
+   "verdicts": {
+    "dog": "caution",
+    "cat": "caution",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
+   },
+   "toxin": "Insoluble calcium oxalates",
+   "notes": {
+    "en": "Insoluble calcium oxalates (as in spathiphyllum and monstera): intense burning in the mouth, drooling, vomiting, difficulty swallowing. Systemic poisoning is usually absent, but with mouth pain and refusal to eat — see a vet.",
+    "ru": "Нерастворимые оксалаты кальция (как у спатифиллума и монстеры): сильное жжение во рту, слюнотечение, рвота, трудно глотать. Системного отравления обычно нет, но с болью во рту и отказом от еды — к врачу."
+   },
+   "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
+    "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/calla-lily"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "pothos",
+   "category": "plant",
+   "names": {
+    "en": [
+     "pothos",
+     "golden pothos",
+     "epipremnum"
+    ],
+    "ru": [
+     "эпипремнум",
+     "сциндапсус",
+     "потос"
+    ]
+   },
+   "scientific_name": "Epipremnum aureum",
+   "verdicts": {
+    "dog": "caution",
+    "cat": "caution",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
+   },
+   "toxin": "Insoluble calcium oxalates",
+   "notes": {
+    "en": "Insoluble calcium oxalates: burning in the mouth, drooling, vomiting, difficulty swallowing. Systemic poisoning is usually absent, but with mouth pain and refusal to eat — see a vet.",
+    "ru": "Нерастворимые оксалаты кальция: жжение во рту, слюнотечение, рвота, трудно глотать. Системного отравления обычно нет, но с болью во рту и отказом от еды — к врачу."
+   },
+   "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
+    "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/golden-pothos"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "amaryllis",
+   "category": "plant",
+   "names": {
+    "en": [
+     "amaryllis",
+     "hippeastrum"
+    ],
+    "ru": [
+     "амариллис",
+     "гиппеаструм"
+    ]
+   },
+   "scientific_name": "Amaryllis belladonna, Hippeastrum spp.",
+   "verdicts": {
+    "dog": "danger",
+    "cat": "danger",
+    "rabbit_rodent": "danger",
+    "bird": "danger",
+    "reptile": "danger"
+   },
+   "toxin": "Lycorine and other Amaryllidaceae alkaloids",
+   "notes": {
+    "en": "Lycorine and other alkaloids, most concentrated in the bulb (as in daffodils): vomiting, drooling, diarrhoea, abdominal pain, lethargy, tremors. Ate a bulb or part of the plant — see a vet straight away.",
+    "ru": "Ликорин и другие алкалоиды, больше всего — в луковице (как у нарцисса): рвота, слюнотечение, диарея, боль в животе, вялость, дрожь. Съел луковицу или часть растения — сразу к врачу."
+   },
+   "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
+    "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/amaryllis"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "yucca",
+   "category": "plant",
+   "names": {
+    "en": [
+     "yucca"
+    ],
+    "ru": [
+     "юкка"
+    ]
+   },
+   "scientific_name": "Yucca spp.",
+   "verdicts": {
+    "dog": "caution",
+    "cat": "caution",
+    "rabbit_rodent": "caution",
+    "bird": "caution",
+    "reptile": "caution"
+   },
+   "toxin": "Saponins",
+   "notes": {
+    "en": "Saponins: vomiting in dogs and cats. The stiff, sharp-edged leaves can injure the mouth. If vomiting repeats — see a vet.",
+    "ru": "Сапонины: у собак и кошек — рвота. Жёсткие листья с острыми краями могут поранить рот. Если рвота повторяется — к врачу."
+   },
+   "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/yadovitye-rasteniya/",
+    "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/yucca"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "boston-fern",
+   "category": "plant",
+   "names": {
+    "en": [
+     "Boston fern",
+     "nephrolepis"
+    ],
+    "ru": [
+     "нефролепис",
+     "бостонский папоротник"
+    ]
+   },
+   "scientific_name": "Nephrolepis exaltata",
+   "verdicts": {
+    "dog": "safe",
+    "cat": "safe",
+    "rabbit_rodent": "safe",
+    "bird": "safe",
+    "reptile": "safe"
+   },
+   "notes": {
+    "en": "Not toxic to dogs and cats. Do not confuse it with asparagus fern, which is also commonly called a 'fern' and irritates the skin and digestive tract.",
+    "ru": "Не ядовит для собак и кошек. Не путать с аспарагусом перистым, который в быту тоже зовут «папоротником»: он раздражает кожу и ЖКТ."
+   },
+   "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/bezopasnye-rasteniya-dlya-doma/",
+    "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/boston-fern"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "areca-palm",
+   "category": "plant",
+   "names": {
+    "en": [
+     "areca palm",
+     "butterfly palm"
+    ],
+    "ru": [
+     "арека",
+     "хризалидокарпус",
+     "пальма арека"
+    ]
+   },
+   "scientific_name": "Dypsis lutescens",
+   "verdicts": {
+    "dog": "safe",
+    "cat": "safe",
+    "rabbit_rodent": "safe",
+    "bird": "safe",
+    "reptile": "safe"
+   },
+   "notes": {
+    "en": "Not toxic to dogs and cats. Do not confuse it with the sago palm (cycad), which looks like a palm and is deadly.",
+    "ru": "Не ядовита для собак и кошек. Не путать с саговником (цикасом) — он внешне похож на пальму и смертельно опасен."
+   },
+   "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/bezopasnye-rasteniya-dlya-doma/",
+    "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/areca-palm"
+   ],
+   "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "christmas-cactus",
+   "category": "plant",
+   "names": {
+    "en": [
+     "Christmas cactus",
+     "schlumbergera"
+    ],
+    "ru": [
+     "декабрист",
+     "шлюмбергера"
+    ]
+   },
+   "scientific_name": "Schlumbergera spp.",
+   "verdicts": {
+    "dog": "safe",
+    "cat": "safe",
+    "rabbit_rodent": "safe",
+    "bird": "safe",
+    "reptile": "safe"
+   },
+   "notes": {
+    "en": "Not toxic to dogs and cats. Eating a lot of leaves may cause mild stomach upset.",
+    "ru": "Не ядовит для собак и кошек. Если животное съело много листьев, возможно лёгкое расстройство пищеварения."
+   },
+   "sources": [
+    "https://bio.vet/wiki/voprosy/koshki/bezopasnye-rasteniya-dlya-doma/",
+    "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/christmas-cactus"
    ],
    "evidence": "clinic-reviewed"
   }

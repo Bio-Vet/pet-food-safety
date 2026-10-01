@@ -26,12 +26,17 @@ const HOUSEHOLD_ICON = {
 	"laundry-pods": "washing-machine", "essential-oils": "droplets", "nicotine-vapes": "cigarette",
 	cannabis: "cannabis", batteries: "battery", "deicing-reagents": "snowflake",
 };
+// иконки растений пакета 25 (новые названия ещё не встречались в прошлом файле сайта)
+const PLANT_ICON = {
+	begonia: "flower", "jade-plant": "leaf", "calla-lily": "flower", pothos: "leaf", amaryllis: "flower",
+	yucca: "leaf", "boston-fern": "leaf", "areca-palm": "leaf", "christmas-cactus": "flower",
+};
 const convert = (it) => {
 	const out = { names: it.names.ru };
 	for (const [en, ruKey] of Object.entries(SPECIES)) {
 		if (it.verdicts[en]) out[ruKey] = it.verdicts[en] === "caution" ? "caution" : it.verdicts[en];
 	}
-	out.icon = iconByName.get(it.names.ru[0]) ?? HOUSEHOLD_ICON[it.id] ?? (it.category === "plant" ? "flower" : it.category === "medication" ? "pill" : it.category === "household" ? "triangle-alert" : "utensils");
+	out.icon = iconByName.get(it.names.ru[0]) ?? HOUSEHOLD_ICON[it.id] ?? PLANT_ICON[it.id] ?? (it.category === "plant" ? "flower" : it.category === "medication" ? "pill" : it.category === "household" ? "triangle-alert" : "utensils");
 	out.note = it.notes.ru;
 	if (it.evidence) out.evidence = it.evidence; // уровень доверия — чекер печатает его под вердиктом
 	// toxic_dose на сайт НЕ переносим: дозировок на bio.vet не печатаем (правило врачей)
