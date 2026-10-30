@@ -86,4 +86,4 @@ Two hard rules (see [CONTRIBUTING.md](CONTRIBUTING.md)):
 
 Educational reference — not a substitute for veterinary care. If your pet has
 eaten something dangerous, contact a veterinarian immediately. In Moscow:
-[BioVet, 20 clinics, 24/7](https://bio.vet/kontakty/).
+[BioVet, 21 clinics, 24/7](https://bio.vet/kontakty/).
