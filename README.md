@@ -2,19 +2,19 @@
 
 **Vet-reviewed dataset: which foods, plants, human medications and household chemicals are safe, risky or dangerous for pets** — dogs, cats, rabbits & rodents, birds and reptiles.
 
-![items](https://img.shields.io/badge/items-91-a1c44c) ![license](https://img.shields.io/badge/data-CC--BY--4.0-blue) ![reviewed](https://img.shields.io/badge/vet--reviewed-2026--09-4f7d1b)
+![items](https://img.shields.io/badge/items-106-a1c44c) ![license](https://img.shields.io/badge/data-CC--BY--4.0-blue) ![reviewed](https://img.shields.io/badge/vet--reviewed-2026--11-4f7d1b)
 
 Most "toxic foods for pets" lists online are copied from one another with no
 medical review. This dataset is different: **every entry has been reviewed by
 licensed veterinarians of the [BioVet](https://bio.vet) clinic network**
-(20 round-the-clock clinics, Moscow) and is used in production by the live
+(round-the-clock clinics, Moscow) and is used in production by the live
 checker at [bio.vet/mozhno-li](https://bio.vet/mozhno-li/).
 
 ## What's inside
 
 One file — [`data/items.json`](data/items.json):
 
-- **101 entries**: 43 foods, 44 house/garden plants, 4 human medications, 10 household chemicals and hazards
+- **106 entries**: 46 foods, 46 house/garden plants, 4 human medications, 10 household chemicals and hazards
 - **Per-species verdicts** (`safe` / `caution` / `danger`) for dogs, cats,
   rabbits & rodents, birds, reptiles
 - **Bilingual**: names and notes in English and Russian

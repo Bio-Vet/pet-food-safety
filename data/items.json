@@ -2,11 +2,11 @@
  "meta": {
   "name": "pet-food-safety",
   "description": "Vet-reviewed safety verdicts for foods, plants, human medications and household chemicals across pet species",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "license": "CC-BY-4.0",
   "attribution": "BioVet veterinary clinic network, Moscow — https://bio.vet",
-  "reviewed_by": "Licensed veterinarians of the BioVet clinic network (20 round-the-clock clinics, Moscow)",
-  "last_review": "2026-10",
+  "reviewed_by": "Licensed veterinarians of the BioVet clinic network (round-the-clock clinics, Moscow)",
+  "last_review": "2026-11",
   "verdict_levels": {
    "safe": "Generally safe in moderation for a healthy animal",
    "caution": "Give only with restrictions described in notes, or avoid",
@@ -25,7 +25,7 @@
    "typical": "Standard veterinary guidance from an international source, confirmed by BioVet review",
    "clinic-reviewed": "BioVet veterinary review of published knowledge-base articles"
   },
-  "updated": "2026-09-18",
+  "updated": "2026-11-24",
   "changelog": [
    {
     "version": "1.1.0",
@@ -36,6 +36,11 @@
     "version": "1.2.0",
     "date": "2026-09-20",
     "changes": "Pack 23 signed off by the chief veterinarian of BioVet (2026-09-20): 23 house/garden plants re-reviewed — verdicts for rabbits & rodents, birds and reptiles added to 18 existing entries, 5 new plants (alstroemeria, rose, peony, eucalyptus, mimosa), euphorbia moved to 'danger' for dogs and cats; new categories 'medication' and 'household' (14 entries: human NSAIDs, aspirin, nasal drops, isoniazid, antifreeze, rodenticides, permethrin, bleach, laundry pods, essential oils, nicotine, cannabis, batteries, de-icing reagents) with toxic_dose thresholds; toxic_dose added to chocolate, xylitol, grapes and onion."
+   },
+   {
+    "version": "1.4.0",
+    "date": "2026-11-24",
+    "changes": "Pack 32 signed off by the chief veterinarian of BioVet (2026-11-24): 5 new entries from checker search demand — beef tendon chews (dog: caution), beetroot (dog: safe; rabbits & rodents: caution), peas (dog: safe; rabbits & rodents: caution), rowan (dog, cat: caution), anthurium (dog, cat: caution). 106 items total."
    }
   ],
   "categories": {
@@ -3097,6 +3102,170 @@
     "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/christmas-cactus"
    ],
    "evidence": "clinic-reviewed"
+  },
+  {
+   "id": "beef-tendon-chews",
+   "category": "food",
+   "names": {
+    "en": [
+     "beef tendon chews",
+     "tendons",
+     "dried tendons",
+     "beef sinew"
+    ],
+    "ru": [
+     "жилки",
+     "бычьи жилы",
+     "говяжьи жилы",
+     "сухожилия",
+     "сушёные жилы"
+    ]
+   },
+   "verdicts": {
+    "dog": "caution"
+   },
+   "toxin": "Mechanical hazard: choking or intestinal obstruction from a swallowed piece",
+   "notes": {
+    "en": "Tendon chews are one of the safer animal-part chews: they are low in fat. The risk is a piece swallowed whole — choking or a bowel obstruction. Give under supervision, pick a chew too big to fit whole in the dog's mouth, and take the stub away. Vomiting, retching, coughing, refusing food or a painful belly after a chew — see a vet straight away.",
+    "ru": "Жилки — один из более удачных вариантов среди лакомств из частей туши: в них мало жира. Риск — кусок, проглоченный целиком: собака может подавиться, возможна непроходимость кишечника. Давать под присмотром, выбирать жилку, которая целиком не помещается в пасть, огрызок забирать. Рвота, позывы к рвоте, кашель, отказ от еды или боль в животе после лакомства — сразу к врачу."
+   },
+   "sources": [
+    "https://www.akc.org/expert-advice/nutrition/choosing-edible-chews-for-dogs/"
+   ],
+   "evidence": "typical"
+  },
+  {
+   "id": "beet",
+   "category": "food",
+   "names": {
+    "en": [
+     "beet",
+     "beetroot",
+     "beets",
+     "beet greens"
+    ],
+    "ru": [
+     "свёкла",
+     "красная свёкла",
+     "варёная свёкла",
+     "ботва свёклы"
+    ]
+   },
+   "verdicts": {
+    "dog": "safe",
+    "rabbit_rodent": "caution"
+   },
+   "toxin": "Oxalic acid; natural sugars",
+   "notes": {
+    "en": "Dogs: plain beet without salt, oil or seasoning in small amounts, cooked is easier to digest; no pickled beet or salads with garlic or onion. Dogs with oxalate stones or urinary crystals should not have beet. Pink or red urine and stool for a day is harmless; if it lasts longer — see a vet. Rabbits and rodents: the root is sugary — a small piece now and then, none for degus; tops — fresh young leaves, sparingly (older leaves carry more oxalates).",
+    "ru": "Собакам: свёкла без соли, масла и приправ — понемногу, варёная усваивается легче; маринованная и салаты с чесноком или луком — нельзя. Собакам с оксалатными камнями или кристаллами в моче свёклу не дают. Моча и стул могут порозоветь на сутки — это не опасно; если дольше — к врачу. Кроликам и грызунам: корнеплод сладкий — кусочек изредка, дегу — не давать; ботву — свежую, молодую и понемногу (в старых листьях больше оксалатов)."
+   },
+   "sources": [
+    "https://www.akc.org/expert-advice/nutrition/can-dogs-eat-beets/",
+    "https://www.petmd.com/dog/nutrition/can-dogs-eat-beets",
+    "https://rabbitwelfare.co.uk/welfare-need/is-beetroot-safe-for-rabbits/",
+    "https://rabbit.org/care/fruits-vegetables/",
+    "https://bio.vet/wiki/pitanie/gryzuny/chem-kormit-degu/"
+   ],
+   "evidence": "typical"
+  },
+  {
+   "id": "peas",
+   "category": "food",
+   "names": {
+    "en": [
+     "peas",
+     "green peas",
+     "garden peas",
+     "pea pods"
+    ],
+    "ru": [
+     "горох",
+     "горошек",
+     "зелёный горошек",
+     "стручковый горох"
+    ]
+   },
+   "verdicts": {
+    "dog": "safe",
+    "rabbit_rodent": "caution"
+   },
+   "notes": {
+    "en": "Dogs: fresh or frozen green peas without salt or seasoning in small amounts; no canned peas (too much salt), no pea soup or porridge with smoked meat, salt or onion. Shell garden peas; give pods with care — a dog can choke on them. Too many peas cause gas and loose stool. Rabbits and rodents: pods and a few fresh green peas now and then; no dried peas or other dry legumes — bloating and a risk of gut blockage.",
+    "ru": "Собакам: свежий или замороженный зелёный горошек без соли и приправ — понемногу; консервированный — нельзя (много соли), гороховый суп и каша с копчёностями, солью или луком — тоже. Садовый горох — без створок, стручки давать осторожно: можно подавиться. От большого количества — газы и расстройство стула. Кроликам и грызунам: стручки и немного свежего зелёного горошка — изредка; сушёный горох и другие бобовые в зёрнах — нельзя: вздутие, риск закупорки кишечника."
+   },
+   "sources": [
+    "https://www.akc.org/expert-advice/nutrition/can-dogs-eat-peas/",
+    "https://www.petmd.com/dog/nutrition/can-dogs-eat-peas",
+    "https://rabbit.org/care/fruits-vegetables/",
+    "https://bio.vet/wiki/pitanie/kroliki/chem-kormit-krolika/"
+   ],
+   "evidence": "typical"
+  },
+  {
+   "id": "rowan",
+   "category": "plant",
+   "names": {
+    "en": [
+     "rowan",
+     "mountain ash",
+     "rowan berries"
+    ],
+    "ru": [
+     "рябина",
+     "ягоды рябины",
+     "рябина обыкновенная",
+     "красная рябина"
+    ]
+   },
+   "scientific_name": "Sorbus aucuparia",
+   "verdicts": {
+    "dog": "caution",
+    "cat": "caution"
+   },
+   "toxin": "Parasorbic acid (raw berries)",
+   "notes": {
+    "en": "Rowan is listed among plants poisonous to pets; raw berries contain parasorbic acid. Do not give the berries. If your pet ate some, call a vet without waiting for symptoms; vomiting, diarrhoea, lethargy or refusing food — see a vet. Black chokeberry (aronia) is a different plant, this entry is not about it.",
+    "ru": "Рябину относят к растениям, ядовитым для питомцев; в сырых ягодах есть парасорбиновая кислота. Ягоды не давать. Съел ягоды — позвоните в клинику, не дожидаясь симптомов; рвота, диарея, вялость или отказ от еды — к врачу. Черноплодная рябина (арония) — другое растение, эта карточка не про неё."
+   },
+   "sources": [
+    "https://www.pdsa.org.uk/pet-help-and-advice/looking-after-your-pet/all-pets/poisonous-plants"
+   ],
+   "evidence": "typical"
+  },
+  {
+   "id": "anthurium",
+   "category": "plant",
+   "names": {
+    "en": [
+     "anthurium",
+     "flamingo flower",
+     "flamingo lily",
+     "laceleaf",
+     "tailflower"
+    ],
+    "ru": [
+     "антуриум",
+     "мужское счастье",
+     "цветок фламинго"
+    ]
+   },
+   "scientific_name": "Anthurium spp.",
+   "verdicts": {
+    "dog": "caution",
+    "cat": "caution"
+   },
+   "toxin": "Insoluble calcium oxalates",
+   "notes": {
+    "en": "Insoluble calcium oxalates, as in monstera and spathiphyllum: chewing causes pain and swelling of the lips, mouth and tongue, drooling, vomiting, difficulty swallowing. Systemic poisoning is usually absent: wipe out the mouth and offer water; with swelling, mouth pain or refusal to eat — see a vet.",
+    "ru": "Нерастворимые оксалаты кальция, как у монстеры и спатифиллума: при разжёвывании — боль и отёк губ, рта и языка, слюнотечение, рвота, трудно глотать. Системного отравления обычно нет: убрать остатки изо рта, предложить воду; при отёке, боли во рту или отказе от еды — к врачу."
+   },
+   "sources": [
+    "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/flamingo-flower",
+    "https://www.petpoisonhelpline.com/poison/anthurium/",
+    "https://www.merckvetmanual.com/toxicology/poisonous-plants/houseplants-and-ornamentals-toxic-to-animals"
+   ],
+   "evidence": "consensus"
   }
  ]
 }
